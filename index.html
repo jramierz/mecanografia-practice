@@ -1,11 +1,93 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tecla Rápida - Mecanografía</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+
+    <header>
+<div class="logo">Tecla<span>Rápida</span><em>⚡</em></div>
+  <div class="grade-tabs">
+    <button class="grade-tab active" onclick="setGrade(7)">1er Nivel</button>
+    <button class="grade-tab" onclick="setGrade(8)">2do Nivel</button>
+    <button class="grade-tab" onclick="setGrade(9)">3er Nivel </button> <br>
+  </div>
+  <div class="stats-header">
+    <div class="stat-chip">
+      <span class="val" id="wpm-display">0</span>
+      <span class="lbl">PPM</span>
+    </div>
+    <div class="stat-chip">
+      <span class="val" id="acc-display">100</span>
+      <span class="lbl">Prec %</span>
+    </div>
+    <div class="stat-chip">
+      <span class="val" id="streak-display">0</span>
+      <span class="lbl">Racha</span>
+    </div>
+  </div>
+    </header>
+
+    <main>
+<div class="exercise-row" id="exercise-row"></div>
+
+  <div class="typing-card" id="typing-card">
+    <div class="exercise-title">Ejercicio <span id="ex-name">1</span> — <span id="ex-desc">Teclas del hogar: ASDF JKL;</span></div>
+        <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+
+    <div class="text-display" id="text-display"></div>
+    <div class="input-area">
+      <input type="text" id="typing-input" placeholder="Haz clic aquí y empieza a escribir..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+      <span class="input-hint">↵ Enter para reiniciar</span>
+    </div>
+
+  <div class="keyboard-section">
+    <div class="keyboard-label">Teclado virtual — tecla resaltada: próxima a presionar</div>
+    <div class="keyboard" id="keyboard"></div>
+    <div class="hand-guide" id="hand-guide">
+      <div class="hand left-hand">
+        <div class="fingers">
+          <div class="finger f4" id="lf4"></div>
+          <div class="finger f3" id="lf3"></div>
+          <div class="finger f2" id="lf2"></div>
+          <div class="finger f1" id="lf1"></div>
+          <div class="finger thumb" id="lth"></div>
+        </div>
+        <div class="hand-label">Mano Izquierda</div>
+      </div>
+      <div class="hand right-hand">
+        <div class="fingers">
+          <div class="finger thumb" id="rth"></div>
+          <div class="finger f1" id="rf1"></div>
+          <div class="finger f2" id="rf2"></div>
+          <div class="finger f3" id="rf3"></div>
+          <div class="finger f4" id="rf4"></div>
+        </div>
+        <div class="hand-label">Mano Derecha</div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="result-card" id="result-card">
+    <div class="stars" id="result-stars">★★★</div>
+    <div class="result-emoji" id="result-emoji">🎉</div>
+    <div class="result-msg" id="result-msg">¡Excelente trabajo!</div>
+    <div class="result-stats">
+      <div class="r-stat"><div class="rv" id="r-wpm">0</div><div class="rl">PPM</div></div>
+      <div class="r-stat"><div class="rv" id="r-acc">0%</div><div class="rl">Precisión</div></div>
+      <div class="r-stat"><div class="rv" id="r-time">0s</div><div class="rl">Tiempo</div></div>
+      <div class="r-stat"><div class="rv" id="r-errors">0</div><div class="rl">Errores</div></div>
+    </div>
+    <button class="btn-next" onclick="nextExercise()">Siguiente ejercicio →</button>
+  </div>
+
+
+    </main>
+    <script src="js/app.js"></script>
 </body>
 </html>
